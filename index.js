@@ -115,6 +115,7 @@ router.get('/products', (req, res)=> {
             status: 200,
             results: results
         })
+        console.log(err)
     })
 });
 
