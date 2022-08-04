@@ -65,7 +65,7 @@ app.post('/register',bodyParser.json(),
     }
 });
 // Login
-router.post('/login', bodyParser.json(),
+app.post('/login', bodyParser.json(),
     (req, res)=> {
     try{
 
@@ -78,13 +78,20 @@ router.post('/login', bodyParser.json(),
         WHERE email = '${email}';
         `;
         db.query(strQry, async (err, results)=> {
+            let compare = (await compare(userpassword,
+                results[0].userpassword)) ;
+                
             if(err) throw err;
-            res.json({
-                status: 200,
-                results: (await compare(userpassword,
-                    results[0].userpassword)) ? results : 
-                    'You provided a wrong email or password'
-            })
+            if((await compare(userpassword,
+                results[0].userpassword) === results) ){
+                alert("Hi there")
+                }
+            // res.json({
+            //     status: 200,
+            //     results: (await compare(userpassword,
+            //         results[0].userpassword)) ? results : 
+            //         'You provided a wrong email or password'
+            // })
         })
     }catch(e) {
         console.log(`From login: ${e.message}`);
