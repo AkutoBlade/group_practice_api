@@ -71,16 +71,15 @@ app.post('/login', bodyParser.json(),
 
         // Get email and password
         const { email, userpassword } = req.body;
+        let compare = (await compare(userpassword,
+            results[0].userpassword)) ;
         const strQry = 
         `
         SELECT firstname, gender, email, userpassword
         FROM users 
         WHERE email = '${email}';
         `;
-        db.query(strQry, async (err, results)=> {
-            let compare = (await compare(userpassword,
-                results[0].userpassword)) ;
-                
+        db.query(strQry, async (err, results)=> {  
             if(err) throw err;
             if((compare === results) ){
                 alert("Hi there")
