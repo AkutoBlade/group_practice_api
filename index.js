@@ -25,9 +25,16 @@ router.get('/', (req, res)=> {
     res.status(200).sendFile(path.join(__dirname, 'views', 'index.html'));
 });
 
+//register
 router.get('/register', (req, res)=> {
     res.status(200).sendFile(path.join(__dirname, 'views', 'register.html'));
 });
+
+//login
+router.get('/login', (req, res)=> {
+    res.status(200).sendFile(path.join(__dirname, 'views', 'login.html'));
+});
+
 // User registration
 
 
