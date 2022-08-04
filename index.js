@@ -65,7 +65,7 @@ app.post('/register',bodyParser.json(),
     }
 });
 // Login
-router.post('/login', bodyParser.json(),
+app.post('/login', bodyParser.json(),
     (req, res)=> {
     try{
 
