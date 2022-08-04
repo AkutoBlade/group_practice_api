@@ -82,8 +82,7 @@ app.post('/login', bodyParser.json(),
                 results[0].userpassword)) ;
                 
             if(err) throw err;
-            if((await compare(userpassword,
-                results[0].userpassword) === results) ){
+            if((compare === results) ){
                 alert("Hi there")
                 }
             // res.json({
