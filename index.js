@@ -170,3 +170,5 @@ router.delete('/clinic/:id', (req, res)=> {
         res.send(`${data.affectedRows} row was affected`);
     })
 });
+
+console.log(bodyParser.json())
