@@ -24,7 +24,13 @@ app.listen(port, ()=> {
 router.get('/', (req, res)=> {
     res.status(200).sendFile(path.join(__dirname, 'views', 'index.html'));
 });
+
+router.get('/products', (req, res)=> {
+    res.status(200).sendFile(path.join(__dirname, 'views', 'products.html'));
+});
 // User registration
+
+
 router.post('/register',bodyParser.json(), 
     async (req, res)=> {
     try{
@@ -94,7 +100,7 @@ router.post('/products', bodyParser.json(),
         db.query(strQry, 
             [bd.prodName, bd.prodUrl, bd.quantity, bd.price, bd.totalamount, bd.dateCreated],
             (err, results)=> {
-                if(err) throw err;
+                if(err) throw err
                 res.send(`number of affected row/s: ${results.affectedRows}`);
             })
     }catch(e) {
