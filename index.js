@@ -26,7 +26,7 @@ router.get('/', (req, res)=> {
 });
 
 router.get('/register', (req, res)=> {
-    res.status(200).sendFile(path.join(__dirname, 'views', 'products.html'));
+    res.status(200).sendFile(path.join(__dirname, 'views', 'register.html'));
 });
 // User registration
 
@@ -51,6 +51,7 @@ app.post('/register',bodyParser.json(),
             [bd.firstname, bd.lastname, bd.gender, bd.address, bd.userRole,bd.email, bd.userpassword],
             (err, results)=> {
                 if(err) throw err;
+                console.log(results)
             })
     }catch(e) {
         console.log(`From registration: ${e.message}`);
