@@ -51,7 +51,6 @@ app.post('/register',bodyParser.json(),
             [bd.firstname, bd.lastname, bd.gender, bd.address, bd.userRole,bd.email, bd.userpassword],
             (err, results)=> {
                 if(err) throw err;
-                res.send(`number of affected row/s: ${results.affectedRows}`);
             })
     }catch(e) {
         console.log(`From registration: ${e.message}`);
