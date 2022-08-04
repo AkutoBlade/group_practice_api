@@ -31,7 +31,7 @@ router.get('/register', (req, res)=> {
 // User registration
 
 
-router.post('/register',bodyParser.json(), 
+app.post('/register',bodyParser.json(), 
     async (req, res)=> {
     try{
         const bd = req.body; 
