@@ -85,7 +85,6 @@ app.post('/login', bodyParser.json(),
                     results[0].userpassword)) ? results : 
                     'You provided a wrong email or password'
             })
-            console.log(results)
         })
     }catch(e) {
         console.log(`From login: ${e.message}`);
