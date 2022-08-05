@@ -61,7 +61,7 @@ app.post('/register', bodyParser.json(),
             db.query(emails, email, async (err, results) => {
 
                 if (err) throw err;
-                if (res.length > 0) {
+                if (results.length > 0) {
                     res.send("Email Exists")
                 } else {
                     bd.userpassword = await hash(bd.userpassword, 10);
