@@ -77,7 +77,7 @@ app.post('/login', bodyParser.json(),
         FROM users 
         WHERE email = '${email}';
         `;
-        db.query(strQry, async (err, results)=> {
+        db.query(strQry,async (err, results)=> {
             if(err) throw err;
 
             switch(true){
