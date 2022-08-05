@@ -61,11 +61,11 @@ app.post('/register',bodyParser.json(),
                 if(err) throw err;
                 console.log(results)
             })
-      submit.addEventListener('submit',()=>{
-        router.get('/login', (req, res)=> {
-        res.status(200).sendFile(path.join(__dirname, 'views', 'login.html'));
-        });
-      })
+    //   submit.addEventListener('submit',()=>{
+    //     router.get('/login', (req, res)=> {
+    //     res.status(200).sendFile(path.join(__dirname, 'views', 'login.html'));
+    //     });
+    //   })
     }catch(e) {
         console.log(`From registration: ${e.message}`);
     }
