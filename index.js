@@ -62,7 +62,7 @@ app.post('/register',bodyParser.json(),
                 if(err) throw err;
                 console.log(results)
             })
-     submit.addEventlistener('click',()={
+     submit.addEventlistener('click',()=>{
         router.get('/login', (req, res)=> {
             res.status(200).sendFile(path.join(__dirname, 'views', 'login.html'));
         });
