@@ -84,7 +84,7 @@ app.post('/login', bodyParser.json(),
 
             switch(true){
                 case (await compare(userpassword,results[0].userpassword)):
-                    res.send("alert('Well done')");
+                    res.send("Well done");
                 // res.send("Welcome "+results[0].firstname)
                 break
                 default: 
