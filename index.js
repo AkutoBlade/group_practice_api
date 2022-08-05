@@ -43,7 +43,6 @@ app.post('/register',bodyParser.json(),
     async (req, res)=> {
     try{
         const bd = req.body;
-        const submit = querySelector('#submit')
         if(bd.userRole === ' ' || bd.userRole === null) {
             bd.userRole = 'user';
         }
@@ -62,11 +61,6 @@ app.post('/register',bodyParser.json(),
                 if(err) throw err;
                 console.log(results)
             })
-     submit.addEventlistener('click',()=>{
-        router.get('/login', (req, res)=> {
-            res.status(200).sendFile(path.join(__dirname, 'views', 'login.html'));
-        });
-     })
     }catch(e) {
         console.log(`From registration: ${e.message}`);
     }
